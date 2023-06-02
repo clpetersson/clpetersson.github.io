@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>Behörighetsprov del 1</title>
+</head>
+<body>
+    <main>
+        <!-- Kolumn 1, thumbnails -->
+        <figure class="thumbnails">
+            <a href="#slide-1" class="thumbnails__link">
+                <img src="images/thumbnail-1.jpg" alt="Miniatyrbild" class="thumbnails__img">
+            </a>
+            <a href="#slide-2" class="thumbnails__link">
+                <img src="images/thumbnail-2.jpg" alt="Miniatyrbild" class="thumbnails__img">
+            </a>
+            <a href="#slide-3" class="thumbnails__link">
+                <img src="images/thumbnail-3.jpg" alt="Miniatyrbild" class="thumbnails__img">
+            </a>
+        </figure>
+        <!-- Kolumn 2, karusell med bilder -->
+        <figure class="slideshow">
+            <img src="images/image-1.jpg" id="slide-1" class="slideshow__img" alt="Monsterablad med karakteristiska hål">
+            <img src="images/image-2.jpg" id="slide-2" class="slideshow__img" alt="Ung monsteraplanta med både hela och håliga blad">
+            <img src="images/image-3.jpg" id="slide-3" class="slideshow__img" alt="Monsteraplanta i hemmiljö">
+        </figure>
+        <!-- Kolumn 3, text -->
+        <section class="product">
+            <h1 class="product__header">Monstera</h1>
+            <p class="product__description">
+                Med sina karakteristiskt formade blad är monsteran en modern klassiker bland gröna inredningsdetaljer.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi tempora quam quaerat?
+            </p>
+            <ul class="product__care">
+                <li><img src="images/icon-sun.svg" class="icon" alt="Ikon">
+                    <b>Läge:</b>&nbsp;Sol till halvskugga</li>
+                <li><img src="images/icon-watering-can.svg" class="icon" alt="Ikon">
+                    <b>Vattnas:</b>&nbsp;Måttligt</li>
+                <li><img src="images/icon-spoon.svg" class="icon" alt="Ikon">
+                    <b>Näring:</b>&nbsp;2 gånger per månad</li>
+            </ul>
+            <form class="product__form">
+                <input type="text" value="1">
+                <button>Lägg i varukorg</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        Photos by <a href="https://unsplash.com/@anniespratt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Annie Spratt</a> on <a href="https://unsplash.com/collections/67665623/house-plants">Unsplash</a>
+    </footer>
+    </body>
+</html>

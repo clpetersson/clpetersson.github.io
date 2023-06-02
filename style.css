@@ -1,0 +1,283 @@
+/*
+8. Upload to Github? and test on phone
+9. Zip
+*/
+
+/* ASSIGNMENT 2 
+1. Re-read assignment
+2. LEARN BOOTSTRAP?
+3. Make thing
+*/
+
+/* ----------- VARIABLES ----------- */
+
+:root {
+    --color-gray-dark: rgb(51, 57, 57);
+    --color-gray-light: rgb(125, 133, 128);
+    --color-green-dark: rgb(28, 128, 63);
+    --color-green-light: rgb(104, 189, 55);
+    --color-white: #f5fbef;
+
+    --margin: 2rem;
+    --margin-s: 1rem;
+}
+
+
+/* ----------- GENERAL STYLE ----------- */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: var(--color-gray-dark);
+    font-family: Raleway, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a:link,
+a:visited {
+    color: var(--color-green-dark);
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: color .2s;
+}
+
+a:hover,
+a:focus {
+    color: var(--color-green-light);
+}
+
+a:focus {
+    outline: 2px solid var(--color-gray-dark);
+}
+
+a:active {
+    outline: none;
+}
+
+button {
+    margin: 0 1.5rem;
+    padding: 1.5rem var(--margin);
+    
+    border: none;
+    border-radius: .5rem;
+    outline: var(--color-green-dark);
+
+    background-color: var(--color-green-dark);
+
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 600;
+    
+    transition: background-color, transform .2s;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--color-green-light);
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+footer {
+    margin: var(--margin) 0;
+    font-size: 1.2rem;
+}
+
+
+/* ----------- FLEX CONTAINER + ITEMS ----------- */
+
+main {
+    margin-left: var(--margin);
+    margin-top: 5vw;
+
+    display: flex;
+    gap: var(--margin);
+    justify-content: center;
+}
+
+
+.thumbnails {
+    height: 50rem;
+    max-width: 15rem;
+    
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+}
+
+.thumbnails__link:link {
+    flex-grow: 1;
+
+    transition: transform .2s;
+}
+
+.thumbnails__link:hover,
+.thumbnails__link:focus {
+    transform: scale(1.05);
+}
+
+.thumbnails__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/1;
+}
+
+
+.slideshow {
+    height: 50rem;
+    max-width: 50rem;
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1.5;
+    gap: var(--margin);
+
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: both mandatory;
+    -ms-overflow-style: none;  /* Hides scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hides scrollbar in Firefox */
+}
+
+/* Hides scrollbar in Webkit browsers */
+.slideshow::-webkit-scrollbar {
+    display: none;
+}
+
+.slideshow__img {
+    height: 100%;
+    width: 100%;
+
+    flex: 1 0 auto;
+
+    object-fit: cover;
+    object-position: bottom left;
+    scroll-snap-align: start;
+}
+
+
+.product {
+    max-width: 50rem;
+    padding: var(--margin);
+
+    flex-shrink: 2.5;
+}
+
+.product__header {
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.product__description {
+    margin: var(--margin) 0;
+}
+
+.product__care {
+    list-style-type: none;
+}
+
+.product__care > * {
+    align-items: center;
+    display: flex;
+
+    font-size: 1.4rem;
+}
+
+.icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0 1rem .5rem 0;
+}
+
+.product__form {
+    margin-top: var(--margin);
+
+    display: flex;
+}
+
+.product__form > input {
+    width: 5rem;
+
+    border: none;
+    border-radius: .5rem;
+    outline: 1px solid rgb(125, 133, 128);
+
+    font-size: inherit;
+    text-align: center;
+}
+
+.product__form > input:focus {
+    outline: 2px solid rgb(104, 189, 55);
+}
+
+
+/* ----------- MEDIA QUERIES ----------- */
+
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .thumbnails,
+    .slideshow {
+        max-width: 80vw;
+        flex-direction: row;
+    }
+
+    .thumbnails {
+        height: 10rem;
+        order: 2;
+    }
+
+    .slideshow {
+        height: 40rem;
+        order: 1;
+    }
+
+    .product {
+        max-width: 80vw;
+        padding: var(--margin) var(--margin-s);
+        order: 3;
+    }
+    
+}
+
+@media only screen and (max-width: 426px) {
+    main {    
+        margin-top: var(--margin);
+        gap: var(--margin-s);
+    }
+
+    .thumbnails,
+    .slideshow {
+        max-width: calc(100vw - var(--margin) * 2);
+        gap: var(--margin-s);
+    }
+
+    .slideshow {
+        height: 30rem;
+    }
+
+    .product {
+        max-width: 100%;
+    }
+}
