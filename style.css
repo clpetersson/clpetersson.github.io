@@ -2,16 +2,12 @@ body {
     background-repeat: no-repeat;
 }
 
-.my-card {
-    height: 40vw;
-}
-
 .my-card:hover > .my-img > img {
     transform: scale(1.1);
 }
 
 .my-img {
-    height: 70%;
+    height: 25vw;
 }
 
 .my-img > img {
@@ -32,8 +28,13 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    .my-card {
+        height: max-content;
+    }
+
     .my-img {
-        height: 100%;
+        height: auto;
+        max-height: 50vw;
     }
 
     .clipped-1 {   
