@@ -1,0 +1,48 @@
+body {
+    background-repeat: no-repeat;
+}
+
+.my-card {
+    height: 40vw;
+}
+
+.my-card:hover > .my-img > img {
+    transform: scale(1.1);
+}
+
+.my-img {
+    height: 70%;
+}
+
+.my-img > img {
+    height: 110%;
+    width: 110%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.clipped-1 {   
+    clip-path: polygon(0 0, 0 95%, 100% 100%, 100% 0);
+    -webkit-clip-path: polygon(0 0, 0 95%, 100% 100%, 100% 0);
+}
+
+.clipped-2 {
+    clip-path: polygon(0 0, 0 100%, 100% 95%, 100% 0);
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 95%, 100% 0);
+}
+
+@media screen and (max-width: 768px) {
+    .my-img {
+        height: 100%;
+    }
+
+    .clipped-1 {   
+        clip-path: polygon(0 0, 0 100%, 90% 100%, 100% 0);
+        -webkit-clip-path: polygon(0 0, 0 100%, 90% 100%, 100% 0);
+    }
+
+    .clipped-2 {   
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 90% 0);
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 90% 0);
+    }
+}
